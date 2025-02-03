@@ -4,8 +4,8 @@ import NewsCard from "@/app/components/NewsCard";
 import CategoryNav from "@/app/components/CategoryNav";
 import SearchBar from "@/app/components/SearchBar";
 
-// const API_KEY = "818e3af0681c4b8cb4a018ad6f622d58";
-const API_KEY = "d253fbc56fa147339b4cb8d393b27e26";
+ const API_KEY = "818e3af0681c4b8cb4a018ad6f622d58";
+ //const API_KEY = "d253fbc56fa147339b4cb8d393b27e26";
 
 const BASE_URL = "https://newsapi.org/v2";
 
