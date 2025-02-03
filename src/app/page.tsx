@@ -30,6 +30,7 @@ export default function Home() {
       localStorage.setItem('currentArticles', JSON.stringify(data.articles))
       setNews(data.articles)
     } catch (err) {
+      // @ts-ignore
       setError(err.message)
     } finally {
       setLoading(false)
