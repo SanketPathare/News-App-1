@@ -97,7 +97,7 @@ export default function ArticlePage({ params }: any) {
             </Link>
           </div>
         )}
-      </div> 
+      </div>
     </article>
   );
 }
