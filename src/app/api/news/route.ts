@@ -8,11 +8,10 @@ export async function GET(request: any) {
     const { searchParams } = new URL(request.url);
     const query = searchParams.get("q");
     const category = searchParams.get("category");
-    const country = searchParams.get("country") || "us";
 
     const endpoint = query
       ? `${BASE_URL}/everything?q=${query}&apiKey=${API_KEY}`
-      : `${BASE_URL}/top-headlines?country=${country}&category=${category}&apiKey=${API_KEY}`;
+      : `${BASE_URL}/top-headlines?country=us&category=${category}&apiKey=${API_KEY}`;
 
     const response = await fetch(endpoint);
     const data = await response.json();

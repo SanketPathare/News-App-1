@@ -1,15 +1,12 @@
 "use client";
-
 import { useState, useEffect } from "react";
 import NewsCard from "@/app/components/NewsCard";
 import CategoryNav from "@/app/components/CategoryNav";
 import SearchBar from "@/app/components/SearchBar";
-import CountrySelector from "@/app/components/CountrySelector";
 
 export default function Home() {
   const [news, setNews] = useState([]);
   const [category, setCategory] = useState("general");
-  const [country, setCountry] = useState("us");
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
@@ -21,7 +18,6 @@ export default function Home() {
         params.append("q", searchQuery);
       } else {
         params.append("category", category);
-        params.append("country", country);
       }
 
       const response = await fetch(`/api/news?${params}`);
@@ -33,7 +29,8 @@ export default function Home() {
 
       localStorage.setItem("currentArticles", JSON.stringify(data.articles));
       setNews(data.articles);
-    } catch (err: any) {
+    } catch (err) {
+      // @ts-ignore
       setError(err.message);
     } finally {
       setLoading(false);
@@ -42,22 +39,16 @@ export default function Home() {
 
   useEffect(() => {
     fetchNews();
-  }, [category, country]);
+  }, [category]);
 
   return (
     <main className="min-h-screen p-4 md:p-8 mt-5">
-      <h1 className="text-3xl md:text-4xl font-bold text-center mb-8">
+      {/* <h1 className="text-3xl md:text-4xl font-bold text-center mb-8">
         Latest News
-      </h1>
+      </h1> */}
 
       <div className="max-w-7xl mx-auto">
         <SearchBar onSearch={fetchNews} />
-        
-        <CountrySelector 
-          currentCountry={country} 
-          onCountryChange={setCountry} 
-        />
-        
         <div className="flex justify-center items-center">
           <CategoryNav
             currentCategory={category}
