@@ -17,11 +17,11 @@ export default function SearchBar({ onSearch }:any) {
           value={query}
           onChange={(e) => setQuery(e.target.value)}
           placeholder="Search news..."
-          className=" bg-neutral-900    flex-1  px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:border-sky-500"
+          className=" bg-slate-800  flex-1  px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:border-sky-800"
         />
         <button
           type="submit"
-          className="px-6 py-2 bg-sky-500 text-white rounded-lg hover:bg-sky-600 transition-colors"
+          className="px-6 py-2 bg-sky-700 text-white rounded-lg hover:bg-sky-800 transition-colors"
         >
           Search
         </button>

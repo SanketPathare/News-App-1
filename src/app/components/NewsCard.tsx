@@ -13,7 +13,7 @@ export default function NewsCard({ article, index }:any) {
   return (
     <Link 
       href={`/article/${slug}`}
-      className="block bg-neutral-800 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-200"
+      className="block bg-slate-800 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-200"
       onClick={() => {
         localStorage.setItem(`article-${slug}`, JSON.stringify({
           ...article,
